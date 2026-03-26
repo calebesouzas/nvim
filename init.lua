@@ -48,7 +48,7 @@ vim.o.number = true
 
 -- Indentation
 vim.o.expandtab = true -- use spaces instead of '\t' character
-vim.o.shiftwidth = indent_nevel -- how many spaces >> and << operators shift
+vim.o.shiftwidth = indent_level -- how many spaces >> and << operators shift
 vim.o.tabstop = indent_level -- how many spaces the <Tab> key inserts
 vim.o.softtabstop = indent_level -- don't really know what this one is
 
