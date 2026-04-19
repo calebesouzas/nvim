@@ -38,6 +38,13 @@ local indent_level = 2
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.keymap.set("n", "<leader>w", ":w<CR>") -- i type ':W' almost all the time
+vim.keymap.set("n", "<leader>bp", ":bprev<CR>")
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
+vim.keymap.set("n", "<leader>bs", ":buffers<CR>")
+vim.keymap.set("n", "<leader>bn", function()
+  local input = vim.fn.input("Insert buffer number: ")
+  vim.api.nvim_set_current_buf(tonumber(input))
+end)
 vim.keymap.set("n", "<leader>i", ":Inspect<CR>")
 vim.keymap.set("n", "<leader>ts", function() vim.treesitter.start() end)
 vim.keymap.set("n", "<leader>te", function() vim.treesitter.stop() end)
