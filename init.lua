@@ -41,7 +41,7 @@ vim.keymap.set("n", "<leader>w", ":w<CR>") -- i type ':W' almost all the time
 vim.keymap.set("n", "<leader>bp", ":bprev<CR>")
 vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
 vim.keymap.set("n", "<leader>bs", ":buffers<CR>")
-vim.keymap.set("n", "<leader>bn", function()
+vim.keymap.set("n", "<leader>bi", function()
   local input = vim.fn.input("Insert buffer number: ")
   vim.api.nvim_set_current_buf(tonumber(input))
 end)
