@@ -37,17 +37,33 @@ local indent_level = 2
 -- Keymaps
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-vim.keymap.set("n", "<leader>w", ":w<CR>") -- i type ':W' almost all the time
-vim.keymap.set("n", "<leader>bp", ":bprev<CR>")
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
-vim.keymap.set("n", "<leader>bs", ":buffers<CR>")
-vim.keymap.set("n", "<leader>bi", function()
-  local input = vim.fn.input("Insert buffer number: ")
-  vim.api.nvim_set_current_buf(tonumber(input))
+
+local map = {
+  n = function (key, command, opts)
+    vim.keymap.set("n", key, command, opts or {})
+  end,
+}
+map.n("<leader>w", ":w<CR>") -- i type ':W' almost all the time
+map.n("<leader>q", ":q<CR>", { buffer = true })
+map.n("<leader>e", ":Explore<CR>")
+map.n("<leader>sh", ":split<CR>")
+map.n("<leader>sv", ":vsplit<CR>")
+map.n("<leader>bp", ":bprev<CR>")
+map.n("<leader>bn", ":bnext<CR>")
+map.n("<leader>bs", ":buffers<CR>")
+map.n("<leader>bi", function()
+  vim.ui.input(
+    {prompt = "Insert buffer number: "},
+    function(input)
+      if input ~= nil then
+        vim.api.nvim_set_current_buf(tonumber(input))
+      end
+    end
+  )
 end)
-vim.keymap.set("n", "<leader>i", ":Inspect<CR>")
-vim.keymap.set("n", "<leader>ts", function() vim.treesitter.start() end)
-vim.keymap.set("n", "<leader>te", function() vim.treesitter.stop() end)
+map.n("<leader>i", ":Inspect<CR>")
+map.n("<leader>ts", function() vim.treesitter.start() end)
+map.n("<leader>te", function() vim.treesitter.stop() end)
 
 -- Line numbers
 vim.o.number = true
