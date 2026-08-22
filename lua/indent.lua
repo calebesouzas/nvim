@@ -1,12 +1,8 @@
-local M = {}
-
-local function reset()
-  vim.bo.expandtab = true
-  vim.bo.shiftwidth = CalebeSouzas.indent_level
-  vim.bo.tabstop = CalebeSouzas.indent_level
-  vim.bo.softtabstop = CalebeSouzas.indent_level
-end
-
-table.insert(M, reset)
-
-return M
+return {
+  reset = function()
+    vim.bo.expandtab = true
+    vim.bo.shiftwidth = CS.indent_level
+    vim.bo.tabstop = CS.indent_level
+    vim.bo.softtabstop = CS.indent_level
+  end,
+}
