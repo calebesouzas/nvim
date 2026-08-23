@@ -1,5 +1,5 @@
 local home = os.getenv("HOME")
-vim.cmd("colorscheme slate")
+vim.cmd("colorscheme wildcharm")
 
 CS = {
   indent_level = 2
