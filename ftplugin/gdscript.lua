@@ -1,3 +1,3 @@
 vim.treesitter.start()
 
-require("indent").reset()
+vim.cmd("set list")
