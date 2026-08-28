@@ -15,15 +15,13 @@ local map = {
   end,
 }
 map.n("<leader>w", ":w<CR>") -- i type ':W' almost all the time
-map.n("<leader>q", ":q<CR>", { buffer = true })
 map.n("<leader>sh", ":split<CR>")
 map.n("<leader>sv", ":vsplit<CR>")
 map.n("<leader>bp", ":bprev<CR>")
 map.n("<leader>bn", ":bnext<CR>")
 map.n("<leader>be", ":edit ")
 map.n("<leader>i", ":Inspect<CR>")
-map.n("<leader>ts", function() vim.treesitter.start() end)
-map.n("<leader>te", function() vim.treesitter.stop() end)
+map.n("<leader>ns", ":nohlsearch<CR>")
 
 -- Line numbers
 vim.o.number = true
