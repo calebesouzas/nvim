@@ -1,7 +1,8 @@
 vim.o.autocomplete = true
 
-vim.o.completeopt = "fuzzy,menuone,noselect,popup"
+vim.o.completeopt = "fuzzy,menuone,noinsert,noselect,popup"
 
-vim.o.pumheight = 10
+vim.o.pumheight = 0 -- use available screen space
+vim.o.pumwidth = 25
 
-vim.o.complete = ".,o"
+vim.o.complete = ".,t,f,w,b,u,o"
