@@ -1,7 +1,7 @@
 local home = os.getenv("HOME")
 
 vim.o.background = "dark"
-vim.cmd("colorscheme catppuccin")
+vim.cmd("colorscheme retrobox")
 
 CS = {
   indent_level = 2
