@@ -1,4 +1,4 @@
-vim.treesitter.start()
+-- vim.treesitter.start()
 
 vim.keymap.set("n", "<leader>ch", function()
   local raw_header_name = vim.fn.input("Header name: ")
