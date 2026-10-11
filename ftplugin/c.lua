@@ -23,3 +23,7 @@ vim.keymap.set("n", "<leader>cf", function()
     return
   end
 end)
+
+vim.cmd("set makeprg=./yo")
+
+require("compiler").setup()
