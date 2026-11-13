@@ -33,10 +33,6 @@ map.n("<leader>tf", ":tabfind ")
 map.n("<leader>tm", ":tabmove ")
 map.n("<leader>ff", ":FZF<CR>")
 
--- Line numbers
-vim.o.number = true
--- vim.o.relativenumber = true
-
 -- Indentation
 vim.o.expandtab = true -- use spaces instead of '\t' character
 vim.o.shiftwidth = CS.indent_level -- how many spaces >> and << shift
