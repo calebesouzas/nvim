@@ -48,3 +48,9 @@ vim.o.termguicolors = true
 -- C coding specifics
 vim.env.CC = "clang" -- we don't have real GCC on Termux. It is basically clang
 vim.g.c_syntax_for_h = 1
+
+vim.filetype.add({
+  extension = {
+    ll = "llvm",
+  },
+})
